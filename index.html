@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funfair Casino</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="script.js" ></script>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="nav-wrapper">
+        <div class="grad-bar"></div>
+        <nav class="navbar">
+            <a href="index.html">
+                <img src="assets/funfair_logo.png" alt="Funfair Casino Logo">
+            </a>
+            
+          
+          <ul class="nav no-search">
+            <li class="nav-item"><a href="index.html">Home</a></li>
+            <li class="nav-item"><a href="promotions.html">Promotions</a></li>
+            <li class="nav-item"><a href="locations.html">Locations</a></li>
+            <li class="nav-item"><a href="#contact">Contact Us</a></li>
+            
+          </ul>
+          <div class="menu-toggle" id="mobile-menu">
+            <button class="btn btn-outline-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" id="mobile-menu" aria-controls="offcanvasRight">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                  <rect y="4" width="24" height="2" fill="currentColor"></rect>
+                  <rect y="11" width="24" height="2" fill="currentColor"></rect>
+                  <rect y="18" width="24" height="2" fill="currentColor"></rect>
+              </svg>
+          </button>
+          </div>
+        </nav>
+      </div>
+      
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="background-color: rgba(255, 255, 255, 0.98); width: 70%">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasRightLabel">Funfair Casino</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body" style="background-color: rgba(255, 255, 255, 0.95);">
+          <!-- <div>
+            Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+          </div> -->
+          <ul class="list-group list-group-flush" style="background-color: rgba(255, 255, 255, 0.95);">
+            <li class="list-group-item"><a href="index.html" style="color: inherit; text-decoration: none;">Home</a></li>
+            <li class="list-group-item"><a href="promotions.html" style="color: inherit; text-decoration: none;">Promotions</a></li>
+            <li class="list-group-item"><a href="locations.html" style="color: inherit; text-decoration: none;">Locations</a></li>
+            <li class="list-group-item"><a href="#contact" style="color: inherit; text-decoration: none;">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Welcome to Funfair Casino</h1>
+            <p>Your Gateway to World-Class Entertainment</p>
+            <button class="cta-btn-locations" onclick="window.location.href='locations.html'">Show Locations</button>
+        </div>
+    </section>
+
+
+
+        <!-- About Section -->
+    <section class="about-section">
+      <h2>what we offer</h2>
+      <div class="offer-icons">
+          <div class="icon-wrapper">
+              <img src="assets/wifi.png" class="svg-icon" alt="wifi"> 
+              <p class="game-name">wifi</p>
+          </div>
+          <div class="icon-wrapper">
+              <img src="assets/atm.png" class="svg-icon" alt="blackjack"> 
+              <p class="game-name">Atm</p>
+          </div>
+          <div class="icon-wrapper">
+            <img src="assets/coffee.png" class="svg-icon" alt="loyalty program"> 
+            <p class="game-name">coffee</p>
+          </div>
+          <div class="icon-wrapper">
+              <img src="assets/online_gaming.png" class="svg-icon" alt="loyalty program"> 
+              <p class="game-name">play online</p>
+          </div>
+          <div class="icon-wrapper">
+              <img src="assets/smoking.png" class="svg-icon" alt="bingo"> 
+              <p class="game-name">Smoking area</p>
+          </div>
+          
+      </div>
+    </section>
+
+
+ 
+    <section class="offer-section">
+        <h2>Our services</h2>
+        <div class="offer-icons">
+            <div class="icon-wrapper">
+                <iframe src="https://lottie.host/embed/7baf2402-dbca-4626-b4ec-ce61b43e9797/ZgJU1wWhx4.json" class="lottie-icon" frameborder="0" allowfullscreen></iframe>  <!-- roulette -->
+                <p class="game-name">Roulette</p>
+            </div>
+            <div class="icon-wrapper">
+                <iframe src="https://lottie.host/embed/f9239ac7-c4c8-4126-a0be-6816922ddb11/NtS2noGSOc.json" class="lottie-icon" frameborder="0" allowfullscreen></iframe>  <!-- blackjack -->
+                <p class="game-name">Blackjack</p>
+            </div>
+            <div class="icon-wrapper">
+              <iframe src="https://lottie.host/embed/8cf71389-a2b9-4872-addf-bb85e760d333/U5S2DxFbR1.json" class="lottie-icon" frameborder="0" allowfullscreen></iframe><!-- bingo -->
+              <p class="game-name">Bingo</p>
+            </div>
+            <div class="icon-wrapper">
+              <iframe src="https://lottie.host/embed/076eaf2e-7a76-4b05-8995-7a3b9626bdbf/vi21OQrndv.json" class="lottie-icon" frameborder="0" allowfullscreen></iframe><!-- slots -->
+              <p class="game-name">slots</p>
+            </div>
+            <div class="icon-wrapper">
+                <iframe src="https://lottie.host/embed/e617f890-f2ad-41ac-abca-ace072724727/ox1M9CPKDh.json" class="lottie-icon" frameborder="0" allowfullscreen></iframe><!-- slots -->
+                <p class="game-name">loyalty program</p>
+            </div>
+        </div>
+        <!-- <p style="padding-top: 40px;">At Funfair Casino, we offer the best slots, table games, and the most exclusive experiences worldwide.</p> -->
+        
+        <!-- <a href="locations.html" class="locations-button">Show Locations</a> -->
+    </section>
+
+    <section class="promotions-section">
+      <h3>Check Our Promotions</h3>
+      <div class="promotion-image-container">
+          <img src="assets/cards.png" alt="Vantage Club Cards" class="promotion-image">
+      </div>
+      <p class="promotion-description">
+        Unlock VIP rewards with Funfair Casino's Loyalty Program! Enjoy free membership and earn perks at every Funfair Casino in Ireland. Join the fun today!
+      </p>
+      <ul class="promotion-benefits">
+        <li>Collect Points & Unlock Rewards</li>
+          <li>Free Bets in Club and Online</li>
+          <li>Receive Exclusive News</li>
+          <li>Prize Draws</li>
+          <li>VIP Jackpots</li>
+      </ul>
+      <a href="#" class="discover-btn">Subscribe to learn more</a>
+  </section>
+  
+  
+
+ 
+    <!-- Online Casino Section -->
+    <section class="online-section">
+      <!-- Online Casino Section -->
+  <div class="card-container">
+      <div class="location_card">
+        <div class="location_floating-image-container">
+          <img src="assets/hot7.png" alt="Online Casino" />
+        </div>
+        <div class="location_card-content">
+          <!-- <span class="date">Hot7Casino</span> -->
+          <h3>Hot7 Online Casino</h3>
+          <p>
+            Experience the ultimate gaming at Hot7Casino. Enjoy live games, thrilling slots, seamless gameplay, and big bonuses all at your fingertips. Ready to win?
+          </p>
+          <div class="button-container">
+              <a href="https://www.hot7casino.com/" target="_blank" class="read-more-btn">Visit Hot7 Casino</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+      
+      
+      
+
+    <!-- Footer Section -->
+    <footer id="contact">
+        <p>&copy; 2024 Funfair Casino. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            
+            <a href="https://www.responsiblegambling.org/" target="_blank">Responsible Gambling</a>
+        </div>
+        <p style="margin-top: 20px;">Contact us at: info@funfaircasino.com</p>
+        <p style="margin: 10px 0;">Phone: +123 456 7890</p>
+    </footer>
+
+    <!-- JavaScript for Smooth Scroll and Header Fade -->
+  
+</body>
+</html>
+

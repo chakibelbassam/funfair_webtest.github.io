@@ -1,0 +1,742 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(#2a2a2a, #000000);
+    color: #fff;
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+
+
+/* Basic styling for the header */
+/* NAVIGATION bar */
+.nav-wrapper {
+width: 100%;
+position: sticky;
+top: 0;
+background-color: rgba(28, 28, 28, 0.9); /* Match the theme */
+z-index: 1000;
+}
+
+.grad-bar {
+width: 100%;
+height: 5px;
+background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+background-size: 400% 400%;
+animation: gradbar 15s ease infinite;
+}
+
+.navbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 0 20px;
+height: 60px;
+}
+
+.navbar img {
+height: 40px;
+}
+
+.navbar ul {
+list-style: none;
+display: flex;
+align-items: center;
+}
+
+.nav-item a {
+color: #fff;
+font-size: 1rem;
+font-weight: 400;
+padding: 0 15px;
+text-decoration: none;
+transition: color 0.3s ease-out;
+}
+
+.nav-item a:hover {
+color: #ffcc00; /* Match hover color */
+}
+
+.menu-toggle {
+display: none;
+cursor: pointer;
+}
+
+.bar {
+width: 25px;
+height: 3px;
+background-color: #fff;
+margin: 5px auto;
+transition: all 0.3s ease-in-out;
+}
+
+
+
+/* MOBILE MENU */
+@media (max-width: 720px) {
+    .navbar ul {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        background-color: #333; /* Match the mobile menu background */
+        width: 100%;
+        top: 60px;
+        left: 0;
+        height: calc(100vh - 60px);
+        text-align: center;
+    }
+
+    .navbar ul.mobile-nav {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display:block;
+    }
+
+    .mobile-nav .nav-item {
+        padding: 15px;
+    }
+
+    .mobile-nav .nav-item a {
+        font-size: 1.2rem;
+    }
+}
+
+
+
+/*  */
+
+.icon-wrapper {
+    display: flex;
+    flex-direction: column; /* Stack iframe and text */
+    align-items: center; /* Center align text */
+    position: relative; /* Positioning for hover effects */
+}
+
+.game-name {
+    margin-top: 10px; /* Space between iframe and text */
+    font-size: 1.2rem; /* Adjust font size */
+    text-transform: uppercase; /* Uppercase text */
+    font-family: 'Arial', sans-serif; /* Choose your desired font */
+    transition: transform 0.3s, color 0.3s; /* Add transitions for effects */
+}
+
+.offer-section .game-name {
+    color: #ffffff; /* Text color */
+}
+
+.lottie-icon:hover + .game-name {
+    transform: scale(1.1); /* Scale up text on hover */
+    color: #007BFF; /* Change text color on hover */
+}
+
+.offer-section {
+    padding: 100px 2rem;
+    text-align: center;
+}
+
+.offer-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.offer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.lottie-icon {
+    width: 100px; /* Adjust the width as needed */
+    height: 100px; /* Adjust the height as needed */
+    border: none; /* Remove border */
+    
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Hide overflow */
+    transition: transform 0.3s;
+}
+
+.lottie-icon:hover {
+    transform: scale(1.1); /* Scale up on hover */
+}
+
+
+
+.hero-section {
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    background: url("assets/bg_funfair.jpeg") center/contain no-repeat;
+    background-position: center bottom;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Prevent scrollbars */
+    background-color: #000000;
+}
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust opacity */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        height: 70vh; /* Smaller height for mobile screens */
+        background-size: contain;
+        background-position: center bottom;
+    }
+}
+
+/* Additional adjustments for larger desktop screens */
+@media (min-width: 1024px) {
+    .hero-section {
+        background-size: cover; /* Cover the section completely */
+        height: 100vh; /* Ensure it still occupies full screen height */
+        background-position: center bottom;
+    }
+}
+
+/* For tablet and smaller screens */
+@media (max-width: 768px) {
+    .hero-section {
+        background-size: contain;
+        background-position: center top; /* Align better on smaller screens */
+        height: 70vh; /* Decrease height to fit content better */
+        background-position: center bottom;
+    }
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    color: #fff;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    color: #ffcc00;
+    margin-bottom: 2rem;
+    animation: fadeIn 2s ease-out;
+}
+
+.cta-btn-locations {
+    margin-top: 2rem;
+    background-color: #ffcc00;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-btn-locations:hover {
+    background-color: #333;
+    color: #ffcc00;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* css for what we offer section in index.html */
+
+.about-section {
+    padding: 5rem 2rem;
+    text-align: center;
+    background-color: #ffffff;
+    color: #333;
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
+  }
+  
+
+/* Css for online casino box. for both index.html and locations.html */
+  .location_card {
+    position: relative;
+    background-color: #fad506;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 600px; /* Set the card width (adjust as necessary) */
+    max-width: 900px; /* Prevent the card from expanding too much */
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .location_floating-image-container {
+    position: relative;
+    left: -60px; /* Adjust the image's left positioning */
+    width: 400px; /* Width of the floating image container */
+    height: 150px; /* Fixed height to avoid changing size */
+    z-index: 2;
+    box-shadow: 0 10px 20px rgba(216, 185, 7, 0.247); /* Shadow for hover effect */
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #0c0c0cf6;
+  }
+  
+  .location_floating-image-container img {
+    padding-left: 20px;
+    width: 90%;
+    height: 90%;
+    object-fit: contain; /* Resize the image to fit inside the box without zooming in */
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+  }
+  
+  
+  
+  .location_card-content {
+    padding-left: 20px; /* Adjust the padding based on the image container size */
+    z-index: 1;
+  }
+  
+  .location_card-content .date {
+    font-size: 12px;
+    color: #ffffff;
+  }
+  
+  .location_card-content h3 {
+    font-size: 24px;
+    margin: 10px 0;
+  }
+  
+  .location_card-content p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .button-container {
+    display: grid;
+    place-items: center; /* Center both horizontally and vertically */
+     /* Optional: set a height to see vertical centering */
+     transform: translateX(-30px);
+}
+
+.read-more-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff5722;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+  
+  .read-more-btn:hover {
+    background-color: #ff784e;
+    transform: translateY(-2px);
+  }
+  
+  .location_card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+  
+  .location_floating-image-container img:hover {
+    transform: scale(1.05);
+  }
+  
+  @media screen and (max-width: 768px) {
+    
+    .location_card {
+      width: 90%;
+      flex-direction: column;
+      max-width: none; /* Prevent too much expansion */
+    }
+  
+    .location_floating-image-container {
+      left: 0;
+      width: 90%;
+      margin-bottom: 20px;
+    }
+    
+  
+    .location_card-content {
+      padding-left: 0;
+    }
+    .button-container {
+         transform: translateX(0px);
+    }
+  }
+  
+  
+   
+/* Footer of website */
+
+footer {
+    background-color: #1c1c1c;
+    color: #fff;
+    padding: 3rem 2rem;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+footer .footer-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+footer .footer-links a {
+    color: #ffcc00;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+footer .footer-links a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+@media screen and (max-width: 768px) {
+    .online-card {
+        flex-direction: column;
+        text-align: left;
+    }
+}
+
+
+
+
+
+
+
+/* locations cards for locations.html css code */
+
+.locations-section {
+    padding: 100px 2rem 5rem;
+    text-align: center;
+}
+
+.locations-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.locations_cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.locations_card {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.locations_card:hover {
+    transform: translateY(-5px);
+}
+
+.locations_card img {
+    width: 100%;
+    border-radius: 10px;
+    height: auto; /* Maintain aspect ratio */
+    max-height: 200px; /* Limit height */
+    object-fit: cover; /* Crop if necessary */
+}
+
+.locations_card h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.map-link {
+    color: #ffcc00;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.map-link:hover {
+    color: #fff;
+}
+
+
+
+/* promotions */
+/* Main Section with Elegant Background and Overlay Image */
+.promo-hero-section {
+    position: relative;
+    height: 80vh;
+    background: linear-gradient(135deg, #0a0f3a, #1c1c1c); /* Dark gradient for a classy look */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+    overflow: hidden;
+}
+
+/* Centered Overlay Image */
+.promo-hero-section .overlay-image {
+    position: relative;
+    z-index: 2; /* Keep it on top */
+    max-width: 50%; /* Adjust width to control size on desktop */
+    height: auto;
+    
+}
+
+/* Centered Content Container */
+.promo-hero-section .content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px; /* Padding above the button */
+}
+
+/* CTA Button */
+.promo-hero-section .cta-button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #ffd700; /* Gold color */
+    color: #1c1c1c; /* Dark text for contrast */
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px; /* Rounded edges */
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.promo-hero-section .cta-button:hover {
+    background-color: #e6b800; /* Darker gold on hover */
+    transform: translateY(-3px); /* Lift effect on hover */
+}
+
+.promo-hero-section .cta-button:active {
+    transform: translateY(1px); /* Pressed effect */
+}
+
+
+/* Responsive Adjustments for Mobile */
+@media (max-width: 400px) {
+    .promo-hero-section {
+        height: 50vh;
+    }
+    .promo-hero-section .overlay-image {
+        max-width: 99%; /* Larger image on mobile */
+    }
+    .promo-hero-section .cta-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+    .promo-hero-section .content-container {
+        padding-top: 10px;
+    }
+}
+
+
+
+
+/* FAQ Section */
+.promo-faq-section {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.promo-faq-section h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+
+
+
+/* promotions index  */
+
+.promotions-section {
+    text-align: center;
+    padding: 20px 20px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    margin-top: 40px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+    max-width: 600px; /* Limit max width for desktop readability */
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform 0.3s ease;
+}
+
+.promotions-section:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+.promotions-section h3 {
+    font-size: 2rem;
+    color: #333;
+    /* margin-bottom: 20px; */
+}
+
+.promotion-image-container {
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.promotion-image {
+    width: 100%;
+    transition: transform 0.3s ease; /* Smooth zoom effect */
+}
+
+.promotion-image-container:hover .promotion-image {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.promotion-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.promotion-benefits {
+    list-style: none;
+    padding: 0;
+    color: #333;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.promotion-benefits li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: slideIn 0.4s forwards;
+}
+
+.promotion-benefits li:nth-child(1) { animation-delay: 0.2s; }
+.promotion-benefits li:nth-child(2) { animation-delay: 0.4s; }
+.promotion-benefits li:nth-child(3) { animation-delay: 0.6s; }
+.promotion-benefits li:nth-child(4) { animation-delay: 0.8s; }
+
+.promotion-benefits li::before {
+    content: "✔";
+    color: #007BFF;
+    margin-right: 10px;
+}
+
+.discover-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    padding-bottom: 20px;
+    background-color: #ffcc00;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.discover-btn:hover {
+    background-color: #e6b800;
+    transform: translateY(-3px); /* Slight lift on hover */
+}
+
+
+
+@media (max-width: 768px) {
+    .promotions-section {
+        max-width: 90%;
+        padding: 30px 15px;
+    }
+
+    .promotion-image {
+        width: 100%;
+    }
+
+    .promotion-benefits li {
+        font-size: 0.9rem;
+    }
+
+    .discover-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Slide-in animation for list items */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+.offer-icons .icon-wrapper img {
+    width: 50px; /* Adjust to desired width */
+    height: auto; /* Maintain aspect ratio */
+}
