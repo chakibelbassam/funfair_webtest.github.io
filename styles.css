@@ -489,6 +489,11 @@ footer p {
     height: auto; /* Maintain aspect ratio */
     max-height: 200px; /* Limit height */
     object-fit: cover; /* Crop if necessary */
+    
+}
+
+.des_location_text {
+    padding-top: 10px;
 }
 
 .locations_card h3 {
@@ -510,10 +515,10 @@ footer p {
 
 
 /* promotions */
-/* Main Section with Elegant Background and Overlay Image */
+/* Main Section with  Background and Overlay Image */
 .promo-hero-section {
     position: relative;
-    height: 80vh;
+    height: 90vh;
     background: linear-gradient(135deg, #0a0f3a, #1c1c1c); /* Dark gradient for a classy look */
     display: flex;
     justify-content: center;
@@ -567,7 +572,7 @@ footer p {
 
 
 /* Responsive Adjustments for Mobile */
-@media (max-width: 400px) {
+@media (max-width: 480px) {
     .promo-hero-section {
         height: 50vh;
     }
@@ -582,6 +587,14 @@ footer p {
         padding-top: 10px;
     }
 }
+/* Responsive Adjustments for Mobile */
+@media (max-width: 750px) {
+    .promo-hero-section {
+        height: 70vh;
+    }
+    
+}
+
 
 
 
