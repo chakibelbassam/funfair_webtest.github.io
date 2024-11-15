@@ -10,7 +10,125 @@
     <script src="script.js" ></script>
     <link rel="stylesheet" href="styles.css">
     <style>
+      /* Center the title and make it responsive */
+/* Outer container to hold buttons and main slider content */
+.slider-outer-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 650px;
+  margin: 0 auto;
+  position: relative;
+}
 
+/* Slider container styling */
+.slider-container {
+  position: relative;
+  width: 90%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/* Wrapper for slides to enable horizontal sliding */
+.slider-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+/* Slide styling */
+.slide {
+  min-width: 100%; /* Ensures each slide occupies full width of the container */
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+/* Style the location cards */
+.locations_card {
+  background-color: #333;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 100%;
+}
+
+.locations_card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  max-height: 200px;
+}
+
+.Slider_location {
+  color:rgb(255, 222, 77);
+}
+
+/* Navigation Buttons */
+.nav-button {
+  background-color: #ffcc00;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 20%;
+  font-size: 18px;
+  color: #333;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.nav-button.prev {
+  left: -50px;
+}
+
+.nav-button.next {
+  right: -50px;
+}
+
+/* Slide Indicators */
+.slide-indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.indicator {
+  height: 10px;
+  width: 10px;
+  background-color: #ffcc00;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.indicator.active {
+  background-color: #333;
+}
+@media (max-width: 620px) {
+  
+  .slider-container {
+    width: 300px;
+  }
+
+  .slider-wrapper {
+    width: 300px;
+  }
+
+  .slide {
+    width: 80%;
+  }
+}
+.nav-button.prev {
+  left: -25px;
+}
+
+.nav-button.next {
+  right: -25px;
+}
     </style>
 </head>
 <body>
@@ -64,55 +182,186 @@
 
     <!-- Locations Section -->
     <section class="locations-section">
-        <h2>Our Locations</h2>
-        <div class="locations_cards">
-            <div class="locations_card">
-              <h3>Las Vegas</h3>
-                <img src="assets/cas1.jpg" alt="Las Vegas Casino" style="padding-bottom: 20px;">
-                <p>The ultimate casino experience in the heart of Las Vegas.</p>
-                <p>
-                  <span class="map-link" onclick="window.open('https://goo.gl/maps/xyz')">See location</span>
-                </p>
-            </div>
-            <div class="locations_card">
-              <h3>Atlantic City</h3>
-                <img src="assets/cas2.jpg" alt="Atlantic City Casino" style="padding-bottom: 20px;">
-                <p>Atlantic City's best gaming and entertainment hub.</p>
-                <p><span class="map-link" onclick="window.open('https://goo.gl/maps/abc')">See location</span></p>
-            </div>
-            <div class="locations_card">
-              <h3>Monte Carlo</h3>
-                <img src="assets/cas3.jpg" alt="Monte Carlo Casino" style="padding-bottom: 20px;">
-                <p>The elegance and charm of the Monte Carlo experience.</p>
-                <p><span class="map-link" onclick="window.open('https://goo.gl/maps/def')">See location</span></p>
-            </div>
-            <div class="locations_card">
-              <h3>Monte Carlo</h3>
-                <img src="assets/cas3.jpg" alt="Monte Carlo Casino" style="padding-bottom: 20px;">
-                <p>The elegance and charm of the Monte Carlo experience.</p>
-                <p><span class="map-link" onclick="window.open('https://goo.gl/maps/def')">See location</span></p>
-            </div>
-            <div class="locations_card">
-              <h3>Monte Carlo</h3>
-                <img src="assets/cas3.jpg" alt="Monte Carlo Casino" style="padding-bottom: 20px;">
-                <p>The elegance and charm of the Monte Carlo experience.</p>
-                <p><span class="map-link" onclick="window.open('https://goo.gl/maps/def')">See location</span></p>
-            </div>
-            <div class="locations_card">
-              <h3>Monte Carlo</h3>
-                <img src="assets/cas3.jpg" alt="Monte Carlo Casino" style="padding-bottom: 20px;">
-                <p>The elegance and charm of the Monte Carlo experience.</p>
-                <p><span class="map-link" onclick="window.open('https://goo.gl/maps/def')">See location</span></p>
-            </div>
-            <div class="locations_card">
-              <h3>Monte Carlo</h3>
-                <img src="assets/cas3.jpg" alt="Monte Carlo Casino" style="padding-bottom: 20px;">
-                <p>The elegance and charm of the Monte Carlo experience.</p>
-                <p><span class="map-link" onclick="window.open('https://goo.gl/maps/def')">See location</span></p>
-            </div>
-            <!-- Add more cards as needed -->
-        </div>
-    </section>
+      <h2 class="section-title" >Our Locations</h2>
+      <h3 class="Slider_location" style="padding-bottom: 20px; ">Munster</h3>
+      <div class="slider-outer-container" id="slider1">
+          <!-- Navigation Buttons -->
+          <button class="nav-button prev" onclick="prevSlide('slider1')">❮</button>
+  
+          <div class="slider-container">
+              <div class="slider-wrapper">
+                  <!-- Slides for first slider -->
+                  <div class="slide">
+                      <div class="locations_card">
+                          <h3 >Waterford city</h3>
+                          <img src="assets/cas1.jpg" alt="Las Vegas Casino">
+                          <p class="des_location_text">The ultimate casino experience in the heart of waterford.</p>
+                          <button type="button" class="btn btn-outline-warning" onclick="window.open('https://goo.gl/maps/xyz')">show on maps</button>
+                      </div>
+                  </div>
+                  <div class="slide">
+                      <div class="locations_card">
+                          <h3>Tramore</h3>
+                          <img src="assets/cas2.jpg" alt="Atlantic City Casino">
+                          <p class="des_location_text">Tramore's best gaming and entertainment hub.</p>
+                          <button type="button" class="btn btn-outline-warning" onclick="window.open('https://goo.gl/maps/xyz')">show on maps</button>
+                      </div>
+                  </div>
+                  <div class="slide">
+                      <div class="locations_card">
+                          <h3>Atlantic City</h3>
+                          <img src="assets/cas2.jpg" alt="Atlantic City Casino">
+                          <p class="des_location_text">Atlantic City's best gaming and entertainment hub.</p>
+                          <button type="button" class="btn btn-outline-warning" onclick="window.open('https://goo.gl/maps/xyz')">show on maps</button>
+                      </div>
+                  </div>
+                  <div class="slide">
+                      <div class="locations_card">
+                          <h3>Atlantic City</h3>
+                          <img src="assets/cas3.jpg" alt="Atlantic City Casino">
+                          <p class="des_location_text">Atlantic City's best gaming and entertainment hub.</p>
+                          <button type="button" class="btn btn-outline-warning" onclick="window.open('https://goo.gl/maps/xyz')">show on maps</button>
+                      </div>
+                  </div>
+              </div>
+  
+              <!-- Indicators for first slider -->
+              <div class="slide-indicators">
+                  <span class="indicator" onclick="goToSlide('slider1', 0)"></span>
+                  <span class="indicator" onclick="goToSlide('slider1', 1)"></span>
+                  <span class="indicator" onclick="goToSlide('slider1', 2)"></span>
+                  <span class="indicator" onclick="goToSlide('slider1', 3)"></span>
+              </div>
+          </div>
+  
+          <button class="nav-button next" onclick="nextSlide('slider1')">❯</button>
+      </div>
+      
+      <br>
+      <br>
+
+      <h3 class="Slider_location" style="padding-bottom: 20px;padding-top:40px">Leinster</h3>
+      <!-- Repeat for second slider with a unique ID -->
+      <div class="slider-outer-container" id="slider2">
+          <!-- Similar structure with a unique ID, like "slider2" -->
+          <!-- Replace slides and indicators accordingly -->
+          <button class="nav-button prev" onclick="prevSlide('slider2')">❮</button>
+  
+          <div class="slider-container">
+              <div class="slider-wrapper">
+                  <!-- Slides for second slider -->
+                  <div class="slide">
+                      <div class="locations_card">
+                          <h3>Another Location</h3>
+                          <img src="assets/cas3.jpg" alt="Another Casino">
+                          <p class="des_location_text">Experience the excitement at our new location.</p>
+                          <button type="button" class="btn btn-outline-warning" onclick="window.open('https://goo.gl/maps/xyz')">show on maps</button>
+                      </div>
+                  </div>
+                  <div class="slide">
+                      <div class="locations_card">
+                          <h3>Yet Another City</h3>
+                          <img src="assets/cas2.jpg" alt="Yet Another Casino">
+                          <p class="des_location_text">Enjoy the best gaming experience.</p>
+                          <button type="button" class="btn btn-outline-warning" onclick="window.open('https://goo.gl/maps/xyz')">show on maps</button>
+                      </div>
+                  </div>
+                  <div class="slide">
+                      <div class="locations_card">
+                          <h3>Yet Another City</h3>
+                          <img src="assets/cas3.jpg" alt="Yet Another Casino">
+                          <p class="des_location_text">Enjoy the best gaming experience.</p>
+                          <button type="button" class="btn btn-outline-warning" onclick="window.open('https://goo.gl/maps/xyz')">show on maps</button>
+                      </div>
+                  </div>
+                  <div class="slide">
+                      <div class="locations_card">
+                          <h3>Yet Another City</h3>
+                          <img src="assets/cas1.jpg" alt="Yet Another Casino">
+                          <p class="des_location_text">Enjoy the best gaming experience.</p>
+                          <button type="button" class="btn btn-outline-warning" onclick="window.open('https://goo.gl/maps/xyz')">show on maps</button>
+                      </div>
+                  </div>
+              </div>
+  
+              <div class="slide-indicators">
+                  <span class="indicator" onclick="goToSlide('slider2', 0)"></span>
+                  <span class="indicator" onclick="goToSlide('slider2', 1)"></span>
+                  <span class="indicator" onclick="goToSlide('slider2', 2)"></span>
+                  <span class="indicator" onclick="goToSlide('slider2', 3)"></span>
+              </div>
+          </div>
+  
+          <button class="nav-button next" onclick="nextSlide('slider2')">❯</button>
+      </div>
+
+      <br>
+      <br>
+      <h3 class="Slider_location" style="padding-bottom: 20px;padding-top:40px">Ulster & Connacht</h3>
+      <!-- Repeat for second slider with a unique ID -->
+      <div class="slider-outer-container" id="slider3">
+          <!-- Similar structure with a unique ID, like "slider2" -->
+          <!-- Replace slides and indicators accordingly -->
+          <button class="nav-button prev" onclick="prevSlide('slider3')">❮</button>
+  
+          <div class="slider-container">
+              <div class="slider-wrapper">
+                  <!-- Slides for second slider -->
+                  <div class="slide">
+                      <div class="locations_card">
+                          <h3>Another Location</h3>
+                          <img src="assets/cas3.jpg" alt="Another Casino">
+                          <p  class="des_location_text">Experience the excitement at our new location.</p>
+                          <button type="button" class="btn btn-outline-warning" onclick="window.open('https://goo.gl/maps/xyz')">show on maps</button>
+                      </div>
+                  </div>
+                  <div class="slide">
+                      <div class="locations_card">
+                          <h3>Yet Another City</h3>
+                          <img src="assets/cas2.jpg" alt="Yet Another Casino">
+                          <p class="des_location_text">Enjoy the best gaming experience.</p>
+                          <button type="button" class="btn btn-outline-warning" onclick="window.open('https://goo.gl/maps/xyz')">show on maps</button>
+                      </div>
+                  </div>
+                  <div class="slide">
+                      <div class="locations_card">
+                          <h3>Yet Another City</h3>
+                          <img src="assets/cas3.jpg" alt="Yet Another Casino">
+                          <p class="des_location_text">Enjoy the best gaming experience.</p>
+                          <button type="button" class="btn btn-outline-warning" onclick="window.open('https://goo.gl/maps/xyz')">show on maps</button>
+                      </div>
+                  </div>
+                  <div class="slide">
+                      <div class="locations_card">
+                          <h3>Yet Another City</h3>
+                          <img src="assets/cas1.jpg" alt="Yet Another Casino">
+                          <p class="des_location_text">Enjoy the best gaming experience.</p>
+                          <button type="button" class="btn btn-outline-warning" onclick="window.open('https://goo.gl/maps/xyz')">show on maps</button>
+                      </div>
+                  </div>
+              </div>
+  
+              <div class="slide-indicators">
+                  <span class="indicator" onclick="goToSlide('slider3', 0)"></span>
+                  <span class="indicator" onclick="goToSlide('slider3', 1)"></span>
+                  <span class="indicator" onclick="goToSlide('slider3', 2)"></span>
+                  <span class="indicator" onclick="goToSlide('slider3', 3)"></span>
+              </div>
+          </div>
+  
+          <button class="nav-button next" onclick="nextSlide('slider3')">❯</button>
+      </div>
+  </section>
+  
+    
+  
+  
+  
+  
+  
+  
+  
+  
 
     <!-- Online Casino Section -->
   <section class="online-section">
@@ -149,3 +398,58 @@
 </body>
 </html>
 
+<script>
+  const sliders = {};
+
+function initSlider(sliderId) {
+    sliders[sliderId] = {
+        currentSlide: 0,
+        slides: document.querySelectorAll(`#${sliderId} .slide`),
+        indicators: document.querySelectorAll(`#${sliderId} .indicator`)
+    };
+    showSlide(sliderId, 0); // Initialize to show the first slide
+}
+
+function showSlide(sliderId, index) {
+    const slider = sliders[sliderId];
+    const totalSlides = slider.slides.length;
+    
+    // Wrap around if index goes out of bounds
+    if (index >= totalSlides) {
+        slider.currentSlide = 0;
+    } else if (index < 0) {
+        slider.currentSlide = totalSlides - 1;
+    } else {
+        slider.currentSlide = index;
+    }
+
+    // Calculate the offset for translation
+    const offset = -slider.currentSlide * 100;
+    document.querySelector(`#${sliderId} .slider-wrapper`).style.transform = `translateX(${offset}%)`;
+
+    // Update active indicator
+    slider.indicators.forEach((indicator, i) => {
+        indicator.classList.toggle('active', i === slider.currentSlide);
+    });
+}
+
+function nextSlide(sliderId) {
+    const slider = sliders[sliderId];
+    showSlide(sliderId, slider.currentSlide + 1);
+}
+
+function prevSlide(sliderId) {
+    const slider = sliders[sliderId];
+    showSlide(sliderId, slider.currentSlide - 1);
+}
+
+function goToSlide(sliderId, slideIndex) {
+    showSlide(sliderId, slideIndex);
+}
+
+// Initialize sliders by calling initSlider with each slider ID
+initSlider('slider1');
+initSlider('slider2');
+initSlider('slider3');
+
+</script>
